@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Nav from './Nav'
 import Footer from './Footer'
+import ArticleList from './ArticleList'
 
 class App extends Component {
   render() {
@@ -10,7 +11,7 @@ class App extends Component {
         <h1>Hello World</h1>
         <Nav />
         <main>
-          page content
+          <ArticleList />
         </main>
         <Footer />
       </div>
