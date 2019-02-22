@@ -3,9 +3,11 @@ import React, { Component } from 'react'
 export default class ExternalLink extends Component {
   render() {
     return (
-      <a href={this.props.link} target='_blank'>
-        View on Engadget.com
-      </a>
+      <div class='outbound-link-container'>
+        <a class='outbound-link' href={this.props.link} target='_blank' rel='noopener noreferrer'>
+          View on engadget.com
+        </a>
+      </div>
     )
   }
 }

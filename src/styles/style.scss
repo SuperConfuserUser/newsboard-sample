@@ -1,14 +1,209 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: 100%;
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: Fakt,AvenirNext-Medium,Segoe UI,sans-serif;
+  color: var(--color--grey-scale--primary);
+  color: #262626;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a {
+  text-decoration: none;
+  color: #262626;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4em;
+  background: #fff;
+  border-bottom: 1px solid #d8d8d8;
+  z-index: 800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+}
+
+main {
+  margin-top: 7em;
+}
+
+.logo {
+  font-family: FaktCondensed,AvenirNextCondensed-Medium,Segoe UI,sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: #262626;
+}
+
+.outbound-link {
+  text-align: center;
+  font-size: 0.9em;
+  padding: 0.5em 2em 0.5em 1em;
+  font-weight: 400;
+  color: #999;
+  display: inline-block;
+  white-space: nowrap;
+  transition: all .15s ease;
+}
+
+.outbound-link:hover {
+  color: #262626;
+}
+
+.brand-banner {
+  padding: 0 0 2em 0;
+  text-align: center;
+}
+
+.brand-banner h1 {
+  font-family: FaktCondensed,AvenirNextCondensed-Medium,Segoe UI,sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 1em;
+    font-size: 4em;
+    line-height: 1em;
+}
+
+.brand-banner span {
+  border-bottom: 0.25em solid #f52828;
+}
+
+.brand-banner p {
+  font-weight: 500;
+  font-size: 1.5em;
+  margin-bottom: 2em;
+}
+
+nav {
+  border-bottom: 1px solid #d8d8d8;
+  margin-bottom: 2em;
+}
+
+footer {
+  text-align: center;
+  color: #262626;
+  padding: 2em 1em 4em 0;
+}
+
+.article-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article-card {
+  list-style-type: none;
+  width: 400px;
+  text-decoration: none;
+  color: #262626;
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: 2em;
+  margin: 0 1em 2.5em 0;
+}
+
+.article-card img {
+  width: 100%;
+}
+
+.article-card h2, 
+.article-content h1,
+.more-card h2 {
+  font-size: 1.5em;
+  font-family: Tiempo, Georgia, serif;
+  line-height: 1.1em;
+  font-weight: 600;
+}
+
+.article-card .attribute, 
+.article-content .attribute, 
+.more-card .attribute {
+  font-size: 0.9em;
+  line-height: 1.2em;
+}
+
+.article-card .excerpt, .article-content .excerpt {
+  font-family: Tiempos,Georgia,serif;
+  font-size: 1.2em;
+}
+
+.article-content {
+  margin: 0 1em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.article-content img {
+  width: 100%;
+  display: flex; 
+}
+
+.article-content .outbound-link-container {
+  text-align: center;
+}
+
+.article-content .outbound-link {
+  outline: none;
+  border: 2px solid #666;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.9em;
+  padding: 0.5em 0.8em;
+  font-weight: 600;
+  color: #666;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  transition: all .15s ease;
+  margin-top: 2em;
+}
+
+.article-content .outbound-link:hover {
+  color: #262626;
+}
+
+.more-articles {
+  margin-left: 1em;
+  width: 400px;
+}
+
+.more-articles h3 {
+  font-family: FaktCondensed,AvenirNextCondensed-Medium,Segoe UI,sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+.more-card {
+  position: relative;
+  left: -2em;
+  list-style: none;
+  width: 100%;
+}
+
+.more-card img {
+  width: 120px;
+  height: 120px;
+  margin-right: 1em;
+  float: left;
+}
+
+.more-card h2 {
+  font-size: 1.1em;
+}
+
+.history-page {
+  margin-left: 1em; 
 }

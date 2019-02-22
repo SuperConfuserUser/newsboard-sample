@@ -4,7 +4,8 @@ export default class Footer extends Component {
   render() {
     return (
       <footer>
-        Powered by <a href='https://newsapi.org' target='_blank'>News API</a>
+        Powered by <a href='https://newsapi.org' target='_blank' rel='noopener noreferrer'>News API</a>
+        <p>©2019 Newsboard</p>
       </footer>
     )
   }
