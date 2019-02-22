@@ -1,9 +1,9 @@
 import React from 'react'
+import Card from './Card'
 
 const Articles = props => {
-  const articles = ['1', '2', '3', '4']
-  const renderArticles = articles.map(article=> 
-      <li>Article {article}</li>
+  const renderArticles = props.articles.map(article=> 
+      <Card article={article} />
   )
 
   return (
