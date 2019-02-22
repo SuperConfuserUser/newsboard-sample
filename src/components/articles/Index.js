@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Card from './Card'
+import ShowLink from './ShowLink'
 
 const Articles = props => {
   const renderArticles = props.articles.map(article => (
-    <Link to={`/articles/${article.id}`}>
+    <ShowLink link={`/articles/${article.id}`}>
       <Card article={article} />
-    </Link>
+    </ShowLink>
   ))
 
   return (
