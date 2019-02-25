@@ -1,18 +1,19 @@
 import React from 'react'
 import ExternalLink from './ExternalLink'
 import MoreArticles from './MoreArticles'
+import Content from './Content'
 
-const Article = props => {
-  const {source, author, title, description, url, urlToImage, content} = props.article
+const Article = ({ article: { source, author, title, description, url, urlToImage, content } }) => {
 
   return (
-    <div class='article-page'>
-      <div class='article-content'>
+    <div className='article-container'>
+      <div className='article-content'>
         <img src={urlToImage} alt={description} />
         <h1>{title}</h1>
-        <p class='attributes'>{source.name} - {author}</p>
-        <p class='excerpt'>{content}</p>
+        <p className='attributes'>{source.name} - {author}</p>
+        <Content content={content} />
         <ExternalLink link={url} />
+        <h3>Stories Curated for You</h3>
       </div>
       <MoreArticles />
     </div>

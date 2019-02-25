@@ -83,9 +83,9 @@ const MoreArticles = props => {
   ))
 
   return (
-    <div class='more-articles'>
+    <div className='more-articles'>
       <h3>More Stories</h3>   
-      <ul class='article-list'>
+      <ul className='more-article-list'>
         {renderArticles}
       </ul>
     </div>

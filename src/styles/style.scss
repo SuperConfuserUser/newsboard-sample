@@ -10,6 +10,8 @@ $border-color: #d8d8d8;
 $red: #f52828;
 $white: #fff;
 
+$break-medium: 1160px;
+
 body {
   margin: 0;
   padding: 0;
@@ -23,6 +25,10 @@ body {
 a {
   text-decoration: none;
   color: $primary-grey-scale-color;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 header {
@@ -41,7 +47,10 @@ header {
 }
 
 main {
-  margin-top: 7em;
+  padding: 7em 0 0 0;
+  max-width: 1142px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .logo {
@@ -110,6 +119,8 @@ footer {
 .article-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
 }
 
 %article-title {
@@ -131,15 +142,17 @@ footer {
 
 .article-card {
   list-style-type: none;
-  width: 400px;
+  width: 23em;
   text-decoration: none;
   color: $primary-grey-scale-color;
   border-bottom: 1px solid $border-color;
   padding-bottom: 2em;
-  margin: 0 1em 2.5em 0;
+  margin-bottom: 2.5em;
 
   img {
-    width: 100%;
+    width: 23em;
+    height: 17em;
+    object-fit: cover;
   }
 
   h2 {
@@ -155,10 +168,32 @@ footer {
   }
 }
 
+%clear-fix {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.article-container {
+  @media screen and (min-width: $break-medium) {
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+}
+
 .article-content {
   margin: 0 1em;
-  padding-bottom: 2em;
+  width: 100%;
   border-bottom: 1px solid $border-color;
+  float: none;
+
+  @media screen and (min-width: $break-medium) {
+    width: 1142px - 480px;
+    float: left;
+  }
 
   img {
     width: 100%;
@@ -167,6 +202,16 @@ footer {
 
   h1 {
     @extend %article-title;
+  }
+
+  h3 {
+    font-family: $condensed-font-stack;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+    padding: 1.5em 0;
+    border-top: 1px solid $border-color;
   }
 
   .attribute {
@@ -196,7 +241,7 @@ footer {
     display: inline-block;
     white-space: nowrap;
     transition: all .15s ease;
-    margin-top: 2em;
+    margin: 2em 0;
 
     &:hover {
       color:  $primary-grey-scale-color;
@@ -205,26 +250,44 @@ footer {
 }
 
 .more-articles {
-  margin-left: 1em;
-  width: 400px;
+  width: 100%;
+  margin: 0 1em 0 2em;
+  float: none;
+
+  @media screen and (min-width: $break-medium) {
+    width: 400px;
+    float: right;
+  }
 
   h3 {
     font-family: $condensed-font-stack;
-    font-weight: 900;
-    text-transform: uppercase;
     font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 0;
   }
+}
+
+.more-article-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  display: block;
 }
 
 .more-card {
   position: relative;
-  left: -2em;
-  list-style: none;
+  list-style-type: none;
   width: 100%;
+
+  &:after {
+    @extend %clear-fix;
+  }
 
   img {
     width: 120px;
     height: 120px;
+    object-fit: cover;
     margin-right: 1em;
     float: left;
   }

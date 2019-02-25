@@ -1,14 +1,14 @@
 import React from 'react'
+import Content from './Content'
 
-const ArticleCard = props => {
-
-  const {source, author, title, description, urlToImage, content} = props.article
+const ArticleCard = ({ article: { source, author, title, description, urlToImage, content } }) => {
+  
   return (
-    <li class='article-card'>
+    <li className='article-card'>
       <img src={urlToImage} alt={description} />
       <h2>{title}</h2>
-      <p class='attributes'>{source.name} - {author}</p>
-      <p class='excerpt'>{content}</p>
+      <p className='attributes'>{source.name} - {author}</p>
+      <Content content={content} />
     </li>
   )
 }

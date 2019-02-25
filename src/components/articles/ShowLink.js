@@ -6,7 +6,7 @@ export default class ShowLink extends Component {
     const { link, children } = this.props
 
     return (
-      <div class='article-show-link'>
+      <div className='article-show-link'>
         <Link to={link}>
           {children}
         </Link>

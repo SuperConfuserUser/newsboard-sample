@@ -2,21 +2,18 @@ import React from 'react'
 import Card from './Card'
 import ShowLink from './ShowLink'
 
-const Articles = props => {
-  const renderArticles = props.articles.map(article => (
-    <ShowLink link={`/articles/${article.link}`}>
-      <Card article={article} />
+const Articles = ({ articles, articleCount }) => {
+  const renderArticles = articles.map((article, i) => (
+    <ShowLink link={`/articles/${i}`}>
+      <Card key={i} article={article} />
     </ShowLink>
   ))
-
+  
   return (
-    <div>      
-      <ul class='article-list'>
-        {renderArticles}
-      </ul>
-    </div>
+    <ul className='article-list'>
+      {renderArticles}
+    </ul>
   )
 }
 
 export default Articles
-

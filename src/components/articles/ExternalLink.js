@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 export default class ExternalLink extends Component {
   render() {
     return (
-      <div class='outbound-link-container'>
-        <a class='outbound-link' href={this.props.link} target='_blank' rel='noopener noreferrer'>
+      <div className='outbound-link-container'>
+        <a className='outbound-link' href={this.props.link} target='_blank' rel='noopener noreferrer'>
           View on engadget.com
         </a>
       </div>

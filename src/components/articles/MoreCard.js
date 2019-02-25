@@ -1,13 +1,14 @@
 import React from 'react'
 
-const MoreCard = props => {
+const MoreCard = ({ article: { source, author, title, description, urlToImage } }) => { 
 
-  const {source, author, title, description, urlToImage, content} = props.article
   return (
-    <li class='more-card'>
+    <li className='more-card'>
       <img src={urlToImage} alt={description} />
-      <h2>{title}</h2>
-      <p class='attributes'>{source.name} - {author}</p>
+      <div>
+        <h2>{title}</h2>
+        <p className='attributes'>{source.name} - {author}</p>
+      </div>
     </li>
   )
 }
