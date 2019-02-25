@@ -1,22 +1,28 @@
+$primary-font-stack: Fakt,AvenirNext-Medium,Segoe UI,sans-serif;
+$condensed-font-stack: FaktCondensed, AvenirNextCondensed-Medium,Segoe UI,sans-serif;
+$serif-font-stack: Tiempo, Georgia, serif;
+
+$primary-grey-scale-color: #262626;
+$light-grey-scale-color: #999;
+$dark-grey-scale-color: #666;
+
+$border-color: #d8d8d8;
+$red: #f52828;
+$white: #fff;
+
 body {
   margin: 0;
   padding: 0;
   font-size: 100%;
   line-height: 1.4;
   font-weight: 400;
-  font-family: Fakt,AvenirNext-Medium,Segoe UI,sans-serif;
-  color: var(--color--grey-scale--primary);
-  color: #262626;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: $primary-font-stack;
+  color: $primary-grey-scale-color;
 }
 
 a {
   text-decoration: none;
-  color: #262626;
+  color: $primary-grey-scale-color;
 }
 
 header {
@@ -25,8 +31,8 @@ header {
   left: 0;
   width: 100%;
   height: 4em;
-  background: #fff;
-  border-bottom: 1px solid #d8d8d8;
+  background: $white;
+  border-bottom: 1px solid $border-color;
   z-index: 800;
   display: flex;
   align-items: center;
@@ -39,11 +45,11 @@ main {
 }
 
 .logo {
-  font-family: FaktCondensed,AvenirNextCondensed-Medium,Segoe UI,sans-serif;
+  font-family: $condensed-font-stack;
     font-weight: 900;
     text-transform: uppercase;
     font-size: 1.5em;
-    color: #262626;
+    color: $primary-grey-scale-color;
 }
 
 .outbound-link {
@@ -51,50 +57,54 @@ main {
   font-size: 0.9em;
   padding: 0.5em 2em 0.5em 1em;
   font-weight: 400;
-  color: #999;
+  color: $light-grey-scale-color;
   display: inline-block;
   white-space: nowrap;
   transition: all .15s ease;
-}
 
-.outbound-link:hover {
-  color: #262626;
+  &:hover {
+    color: $primary-grey-scale-color;
+  }
 }
 
 .brand-banner {
   padding: 0 0 2em 0;
   text-align: center;
-}
 
-.brand-banner h1 {
-  font-family: FaktCondensed,AvenirNextCondensed-Medium,Segoe UI,sans-serif;
+  h1 {
+    font-family: $condensed-font-stack;
     font-weight: 900;
     text-transform: uppercase;
     display: inline-block;
     margin-bottom: 1em;
     font-size: 4em;
     line-height: 1em;
-}
+  }
 
-.brand-banner span {
-  border-bottom: 0.25em solid #f52828;
-}
+  span {
+    border-bottom: 0.25em solid $red;
+  }
 
-.brand-banner p {
-  font-weight: 500;
-  font-size: 1.5em;
-  margin-bottom: 2em;
+  p {
+    font-weight: 500;
+    font-size: 1.5em;
+    margin-bottom: 2em;
+  }
 }
 
 nav {
-  border-bottom: 1px solid #d8d8d8;
+  border-bottom: 1px solid $border-color;
   margin-bottom: 2em;
 }
 
 footer {
   text-align: center;
-  color: #262626;
+  color: $primary-grey-scale-color;
   padding: 2em 1em 4em 0;
+}
+
+.loading {
+  text-align: center;
 }
 
 .article-list {
@@ -102,88 +112,108 @@ footer {
   flex-wrap: wrap;
 }
 
-.article-card {
-  list-style-type: none;
-  width: 400px;
-  text-decoration: none;
-  color: #262626;
-  border-bottom: 1px solid #d8d8d8;
-  padding-bottom: 2em;
-  margin: 0 1em 2.5em 0;
-}
-
-.article-card img {
-  width: 100%;
-}
-
-.article-card h2, 
-.article-content h1,
-.more-card h2 {
+%article-title {
   font-size: 1.5em;
-  font-family: Tiempo, Georgia, serif;
+  font-family: $serif-font-stack;
   line-height: 1.1em;
   font-weight: 600;
 }
 
-.article-card .attribute, 
-.article-content .attribute, 
-.more-card .attribute {
+%article-attribute {
   font-size: 0.9em;
   line-height: 1.2em;
 }
 
-.article-card .excerpt, .article-content .excerpt {
-  font-family: Tiempos,Georgia,serif;
+%article-excerpt {
+  font-family: $serif-font-stack;
   font-size: 1.2em;
+}
+
+.article-card {
+  list-style-type: none;
+  width: 400px;
+  text-decoration: none;
+  color: $primary-grey-scale-color;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 2em;
+  margin: 0 1em 2.5em 0;
+
+  img {
+    width: 100%;
+  }
+
+  h2 {
+    @extend %article-title;
+  }
+
+  .attribute {
+    @extend %article-attribute;
+  }
+
+  .excerpt {
+    @extend %article-excerpt;
+  }
 }
 
 .article-content {
   margin: 0 1em;
   padding-bottom: 2em;
-  border-bottom: 1px solid #d8d8d8;
-}
+  border-bottom: 1px solid $border-color;
 
-.article-content img {
-  width: 100%;
-  display: flex; 
-}
+  img {
+    width: 100%;
+    display: flex; 
+  }
 
-.article-content .outbound-link-container {
-  text-align: center;
-}
+  h1 {
+    @extend %article-title;
+  }
 
-.article-content .outbound-link {
-  outline: none;
-  border: 2px solid #666;
-  text-decoration: none;
-  text-align: center;
-  font-size: 0.9em;
-  padding: 0.5em 0.8em;
-  font-weight: 600;
-  color: #666;
-  border-radius: 4px;
-  background-color: transparent;
-  cursor: pointer;
-  display: inline-block;
-  white-space: nowrap;
-  transition: all .15s ease;
-  margin-top: 2em;
-}
+  .attribute {
+    @extend %article-attribute;
+  }
 
-.article-content .outbound-link:hover {
-  color: #262626;
+  .excerpt {
+    @extend %article-excerpt;
+  }
+
+  .outbound-link-container {
+    text-align: center;
+  }
+  
+  .outbound-link {
+    outline: none;
+    border: 2px solid $dark-grey-scale-color;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 0.5em 0.8em;
+    font-weight: 600;
+    color: $dark-grey-scale-color;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    transition: all .15s ease;
+    margin-top: 2em;
+
+    &:hover {
+      color:  $primary-grey-scale-color;
+    }
+  }
 }
 
 .more-articles {
   margin-left: 1em;
   width: 400px;
-}
 
-.more-articles h3 {
-  font-family: FaktCondensed,AvenirNextCondensed-Medium,Segoe UI,sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 1.5em;
+  h3 {
+    font-family: $condensed-font-stack;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.5em;
+  }
 }
 
 .more-card {
@@ -191,17 +221,22 @@ footer {
   left: -2em;
   list-style: none;
   width: 100%;
-}
 
-.more-card img {
-  width: 120px;
-  height: 120px;
-  margin-right: 1em;
-  float: left;
-}
+  img {
+    width: 120px;
+    height: 120px;
+    margin-right: 1em;
+    float: left;
+  }
 
-.more-card h2 {
-  font-size: 1.1em;
+  h2 {
+    @extend %article-title;
+    font-size: 1.1em;
+  }
+
+  .attribute {
+    @extend %article-attribute;
+  }
 }
 
 .history-page {
